@@ -1,4 +1,3 @@
 venv/
-dataframe.bcolz/
 .DS_Store
 .idea/
