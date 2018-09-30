@@ -1,21 +1,17 @@
 from Nodes import Node
+from Pipelines import Pipeline
 
 
 def main():
-    # start = datetime(2018, 1, 1)
-    # end = datetime(2018, 9, 22)
-    #
-    # reader = LastReader(symbols="FB, TWTR, GOOGL, MU", start=start)
-    #
-    # df = reader.read()
-    # print(df.values)
-    # ct = bcolz.ctable(df, rootdir=r"C:\Users\pawla\PycharmProjects\DataCollecting\bcolz", auto_flush=True)
-    # print(ct.head())
+
     n1 = Node("n1")
-    n2 = Node("n2", [n1])
+    n2 = Node("n2")
+    p1 = Pipeline("p1", [n1], [n2])
 
     print(n1)
     print(n2)
+    print(p1)
+
 
 if __name__ == "__main__":
     main()
