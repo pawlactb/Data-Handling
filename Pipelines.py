@@ -1,21 +1,38 @@
 import pandas as pd
 
-
 class Pipeline():
 
     def __init__(self):
+        """
+        Initialize the Node.
+        """
         self.producers = {}
         self.consumers = {}
         self.data = pd.DataFrame()
         pass
 
     def process(self):
+        """
+        Override this method to process your data.
+        """
         pass
 
     def attach_consumer(self, name, consumer):
+        """
+        Inform the Node of a node to update.
+        :param name: Name the node the pipeline is connecting to
+        :param consumer: The consuming Node.
+        :return: None
+        """
         self.consumers[name] = consumer
 
     def attach_producer(self, name, consumer):
+        """
+        Inform the Node
+        :param name:
+        :param consumer:
+        :return:
+        """
         self.producers[name] = consumer
 
     def unattach_consumer(self, name):
